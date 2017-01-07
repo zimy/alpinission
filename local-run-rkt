@@ -2,7 +2,7 @@ sudo sudo rkt run \
 --insecure-options=image \
 --volume torrents,kind=host,source=/media/striping/transmission \
 --volume configs,kind=host,source=/home/zimy/transmission/conf \
-docker://alpine:latest \
+docker://zimy/alpinission:version-1 \
 --net=host \
 --mount volume=torrents,target=/data \
 --mount volume=configs,target=/etc/transmission/conf \
