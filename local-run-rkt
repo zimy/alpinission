@@ -1,10 +1,1 @@
-sudo sudo rkt run \
---insecure-options=image \
---volume torrents,kind=host,source=/media/striping/transmission \
---volume configs,kind=host,source=/home/zimy/transmission/conf \
-docker://zimy/alpinission:version-1 \
---net=host \
---mount volume=torrents,target=/data \
---mount volume=configs,target=/etc/transmission/conf \
---exec /bin/sh \
--- -c "ls /data ; ls /etc/transmission/conf"
+sudo rkt run --dns 8.8.8.8 --insecure-options=image --volume torrents,kind=host,source=/media/striping/transmission --volume configs,kind=host,source=/home/zimy/transmission/conf docker://zimy/alpinission:version-2 --net=host --mount volume=torrents,target=/data --mount volume=configs,target=/etc/transmission/conf
